@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Attractions.css'; // Importing the CSS file
 
 function Restaurants() {
   const [city, setCity] = useState('');
@@ -22,14 +23,15 @@ function Restaurants() {
   return (
     <div>
       <h1>Search for Restaurants</h1>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="form-style">
         <input
           type="text"
           placeholder="Enter a city"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          className="input-style"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="button-style">Search</button>
       </form>
       <div className="grid">
         {restaurants.map((restaurant, index) => (
