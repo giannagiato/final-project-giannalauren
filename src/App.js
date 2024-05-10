@@ -4,6 +4,7 @@ import Home from './Home';
 import Tips from './Tips';
 import Attractions from './Attractions';
 import AttractionDetail from './AttractionDetail';
+import TipsDetail from './TipsDetail';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="/attractions" element={<Attractions />} />
             <Route path="/restaurants" element={<Tips />} />
             <Route path="/attraction/:id" element={<AttractionDetail />} />
+            <Route path="/restaurants/:id" element={<TipsDetail />} />
           </Routes>
         </header>
       </div>

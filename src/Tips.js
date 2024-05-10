@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Attractions.css"; // Assuming you want to use the same CSS file
 
 function Restaurants() {
   const [city, setCity] = useState("St. Louis"); // Set default city to St. Louis
   const [restaurants, setRestaurants] = useState([]);
+  const navigate = useNavigate();
 
   // Function to fetch restaurants
   const fetchRestaurants = async () => {
@@ -17,7 +19,6 @@ function Restaurants() {
     }
   };
 
-  // useEffect to call fetchRestaurants when the component mounts
   useEffect(() => {
     fetchRestaurants();
   }, []); // Empty dependency array ensures this runs only once on mount
@@ -44,7 +45,11 @@ function Restaurants() {
       </form>
       <div className="grid">
         {restaurants.map((restaurant, index) => (
-          <div key={index} className="card">
+          <div
+            key={index}
+            className="card"
+            onClick={() => navigate(`/restaurants/${restaurant.place_id}`)}
+          >
             <img
               src={
                 restaurant.photos
