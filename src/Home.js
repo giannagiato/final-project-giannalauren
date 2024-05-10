@@ -1,6 +1,27 @@
 import React from 'react';
 import './home.css';
 
+async function fetchStLouisImages() {
+  const accessKey = "ROecJVFlyVv9hK6IyuRQ_ZQYD1srp8mPhNvyCD6Oesk";
+  const response = await fetch(`https://api.unsplash.com/search/photos?query=st+louis&client_id=${accessKey}`);
+  const data = await response.json();
+  return data.results;
+}
+
+async function displayStLouisImages() {
+  const stLouisImages = await fetchStLouisImages();
+  const stLouisImagesContainer = document.getElementById('stLouisImages');
+
+  stLouisImages.forEach((image) => {
+      const img = document.createElement('img');
+      img.src = image.urls.regular;
+      img.alt = image.alt_description;
+      stLouisImagesContainer.appendChild(img);
+  });
+}
+
+displayStLouisImages();
+
 function Home() {
   return (
     <div className='main'>
@@ -24,11 +45,13 @@ function Home() {
         <li><strong>Enjoy the Moment:</strong> Take time to relax and enjoy the experience, rather than rushing from one place to another.</li>
     </ul>
     <h2>Featured Destination: St. Louis, MO</h2>
+    <div id="stLouisImages" className="image-gallery"></div>
             <h3>Attractions</h3>
             <p>St. Louis offers a variety of attractions for visitors to explore. The iconic Gateway Arch is a must-see, offering breathtaking views of the city from its observation deck. For nature lovers, the St. Louis Zoo is a top destination, known for its conservation efforts and wide array of animal exhibits. Another unique attraction is the City Museum, a surreal playground featuring caves, slides, and architectural marvels, making it fun for all ages.</p>
             <h3>Restaurants</h3>
             <p>When it comes to dining, St. Louis has a diverse culinary scene to satisfy every palate. For a taste of the city's famous barbecue, head to Pappy's Smokehouse or Bogart's Smokehouse. For a more upscale experience, try Sidney Street Cafe, known for its innovative cuisine and elegant ambiance. For those seeking international flavors, St. Louis offers a variety of options, from Italian at Charlie Gitto's to Mexican at Mission Taco Joint. Whether you're looking for a casual meal or a fine dining experience, St. Louis has something for everyone.</p>
   </div>
+
   );
 }
 

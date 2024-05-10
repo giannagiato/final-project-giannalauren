@@ -14,3 +14,27 @@ h1, h2, h3{
 h1, h3{
     margin-top: 50px;
 }
+
+
+@media only screen and (min-width: 501px) {
+    .image-gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        height: 200px;
+    }
+    
+    /* Individual image */
+    .image-gallery img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+  }
+  
+  @media only screen and (max-width: 500px) {
+    
+  }
+  
