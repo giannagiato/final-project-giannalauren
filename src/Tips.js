@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './Attractions.css'; // Importing the CSS file
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./Attractions.css"; // Assuming you want to use the same CSS file
 
 function Restaurants() {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("St. Louis"); // Set default city to St. Louis
   const [restaurants, setRestaurants] = useState([]);
+
+  // Function to fetch restaurants
+  const fetchRestaurants = async () => {
+    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${city}&key=AIzaSyDiMzu2oQlbnbJCuMhA5Jami0mcXsZoi8s`;
+    try {
+      const response = await axios.get(url);
+      setRestaurants(response.data.results.slice(0, 9)); // Show only the top 10 results
+    } catch (error) {
+      console.error("Failed to fetch restaurants:", error);
+    }
+  };
+
+  // useEffect to call fetchRestaurants when the component mounts
+  useEffect(() => {
+    fetchRestaurants();
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    // Adjust the query to search for restaurants in the specified city
-    const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+${city}&key=AIzaSyDiMzu2oQlbnbJCuMhA5Jami0mcXsZoi8s`;
-
-    try {
-      const response = await axios.get(url);
-      // Assuming 'results' contains the list of restaurants
-      setRestaurants(response.data.results.slice(0, 9)); // Show only the top 10 results
-    } catch (error) {
-      console.error('Failed to fetch restaurants:', error);
-    }
+    fetchRestaurants(); // Call the fetch function on form submission as well
   };
 
   return (
@@ -31,12 +38,21 @@ function Restaurants() {
           onChange={(e) => setCity(e.target.value)}
           className="input-style"
         />
-        <button type="submit" className="button-style">Search</button>
+        <button type="submit" className="button-style">
+          Search
+        </button>
       </form>
       <div className="grid">
         {restaurants.map((restaurant, index) => (
           <div key={index} className="card">
-            <img src={restaurant.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${restaurant.photos[0].photo_reference}&key=AIzaSyDiMzu2oQlbnbJCuMhA5Jami0mcXsZoi8s` : 'placeholder.jpg'} alt={restaurant.name} />
+            <img
+              src={
+                restaurant.photos
+                  ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${restaurant.photos[0].photo_reference}&key=AIzaSyDiMzu2oQlbnbJCuMhA5Jami0mcXsZoi8s`
+                  : "placeholder.jpg"
+              }
+              alt={restaurant.name}
+            />
             <h3>{restaurant.name}</h3>
             <p>{restaurant.formatted_address}</p>
           </div>
