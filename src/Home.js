@@ -1,6 +1,29 @@
 import React from 'react';
 import './home.css';
 
+//Travel images
+async function fetchTravelImages() {
+  const accessKey = "ROecJVFlyVv9hK6IyuRQ_ZQYD1srp8mPhNvyCD6Oesk";
+  const response = await fetch(`https://api.unsplash.com/search/photos?query=travel&client_id=${accessKey}`);
+  const data = await response.json();
+  return data.results;
+}
+
+async function displayTravelImages() {
+  const travelImages = await fetchTravelImages();
+  const travelImagesContainer = document.getElementById('travelImages');
+
+  travelImages.forEach((image) => {
+      const img = document.createElement('img');
+      img.src = image.urls.regular;
+      img.alt = image.alt_description;
+      travelImagesContainer.appendChild(img);
+  });
+}
+
+displayTravelImages();
+
+//STL images
 async function fetchStLouisImages() {
   const accessKey = "ROecJVFlyVv9hK6IyuRQ_ZQYD1srp8mPhNvyCD6Oesk";
   const response = await fetch(`https://api.unsplash.com/search/photos?query=st+louis&client_id=${accessKey}`);
@@ -27,6 +50,7 @@ function Home() {
     <div className='main'>
 
     <h1>Welcome to Tourist Guide</h1>
+    <div id="travelImages" className="image-gallery"></div>
     <h2>About</h2>
     <p>At Tourist Guide, we are passionate about travel and exploration. Our mission is to help you make the most of your travels by suggesting attractions and restaurants and providing detailed information on their contact, rating, address, price, etc. We aim to be your ultimate travel companion.</p>
     <h2>How to Use This Site</h2>

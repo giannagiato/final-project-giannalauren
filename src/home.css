@@ -16,7 +16,7 @@ h1, h3{
 }
 
 
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 401px) {
     .image-gallery {
         display: flex;
         flex-wrap: nowrap;
@@ -34,7 +34,23 @@ h1, h3{
 
   }
   
-  @media only screen and (max-width: 500px) {
-    
+  @media only screen and (max-width: 400px) {
+    .image-gallery {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 200px;
+    }
+
+    .image-gallery img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
   }
   
