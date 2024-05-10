@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './AttractionDetail.css'; // Importing the CSS file
+import './attractionDetail.css'; // Importing the CSS file
 import './Attractions.css'; 
 
 function AttractionDetail() {
