@@ -1,9 +1,13 @@
 /* Attractions.css */
+* {
+  background-color: rgb(245, 245, 236);
+
+}
 .form-style {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 30px;
 }
 
 .input-style {
@@ -19,7 +23,7 @@
 .button-style {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #007bff;
+  background-color:  #073b01; /* Dark background color */
   color: white;
   border: none;
   border-radius: 5px;

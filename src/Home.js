@@ -1,8 +1,10 @@
 import React from 'react';
+import './home.css';
 
 function Home() {
   return (
-    <div>
+    <div className='main'>
+      
     <h1>Welcome to Tourist Guide</h1>
     <h2>About</h2>
     <p>At Tourist Guide, we are passionate about travel and exploration. Our mission is to help you make the most of your travels by suggesting attractions and restaurants and providing detailed information on their contact, rating, address, price, etc. We aim to be your ultimate travel companion.</p>
