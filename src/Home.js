@@ -80,3 +80,8 @@ function Home() {
 }
 
 export default Home;
+
+document.addEventListener('DOMContentLoaded', () => {
+  displayStLouisImages();
+  displayTravelImages();
+});
