@@ -21,7 +21,6 @@ async function displayTravelImages() {
   });
 }
 
-displayTravelImages();
 
 //STL images
 async function fetchStLouisImages() {
@@ -43,7 +42,6 @@ async function displayStLouisImages() {
   });
 }
 
-displayStLouisImages();
 
 function Home() {
   displayTravelImages();
