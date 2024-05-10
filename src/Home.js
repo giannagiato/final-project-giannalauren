@@ -46,6 +46,8 @@ async function displayStLouisImages() {
 displayStLouisImages();
 
 function Home() {
+  displayTravelImages();
+  displayStLouisImages();
   return (
     <div className='main'>
 
