@@ -20,6 +20,9 @@
   border-radius: 5px;
 }
 
+.input-style:focus {
+  border-color: red;
+}
 .button-style {
   padding: 10px 20px;
   font-size: 18px;

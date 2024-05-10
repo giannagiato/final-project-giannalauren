@@ -21,7 +21,7 @@ function Attractions() {
   };
 
   return (
-    <div className='main'>
+    <div>
       <h1>Search for Tourist Attractions</h1>
       <form onSubmit={handleSearch} className="form-style">
         <input

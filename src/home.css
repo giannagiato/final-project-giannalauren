@@ -1,15 +1,16 @@
 .main {
     background-color: rgb(245, 245, 236);
-
     padding: 10px;
 }
 
-h1, h2{
+h1, h2, h3{
     margin-top: 100px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center
+    text-align: center;
+    color: #073b01;
+
 }
 
-h1{
+h1, h3{
     margin-top: 50px;
 }
