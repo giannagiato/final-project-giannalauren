@@ -28,10 +28,18 @@
   font-size: 18px;
   background-color:  #073b01; /* Dark background color */
   color: white;
-  border: none;
+  border-color: #073b01;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.button-style:hover{
+  background-color: #e9d015; /* Background becomes blue on hover */
+  color: #dc1010; /* Text color changes to dark */
+  border-color: #dc1010;
+}
+
 
 .grid {
   display: grid;
