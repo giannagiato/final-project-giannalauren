@@ -1,0 +1,67 @@
+.attraction-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(245, 245, 236);
+  }
+  
+  .attraction-detail-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .attraction-detail-container h1 {
+    font-size: 2em;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #073b01;
+  }
+  
+  .attraction-detail-container h3 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #073b01;
+  }
+  
+  .attraction-detail-container p {
+    margin-bottom: 10px;
+  }
+  
+  .attraction-detail-container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .attraction-detail-container a:hover {
+    text-decoration: underline;
+  }
+  
+  .attraction-detail-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .attraction-detail-container li {
+    margin-bottom: 10px;
+  }
+  
+  .attraction-detail-container li p {
+    margin: 0;
+  }
+  
+  /* Responsive styles */
+  @media only screen and (max-width: 600px) {
+    .attraction-detail-container {
+      padding: 10px;
+    }
+  
+    .attraction-detail-container h1 {
+      font-size: 1.5em;
+    }
+  }
+  
