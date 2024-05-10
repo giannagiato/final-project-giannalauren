@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import "./attractionDetail.css"; // Importing the CSS file
-import "./Attractions.css";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import './AttractionDetail.css'; // Importing the CSS file
+import './Attractions.css'; 
 
 function AttractionDetail() {
   const { id } = useParams(); // `id` here is the place_id from Google Places
